@@ -1,9 +1,11 @@
+// Psychic Game
+
 // Here we are provided an initial array of letters.
  var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_"];
 
 // User choice will be held here.
- var userChoice = "";
-     console.log(userChoice);  
+ var userGuess = "";
+     console.log(userGuess);  
 
 // Computer selected solution will be held here.
  var chosenLetter = "";
@@ -15,7 +17,7 @@ var winCounter = 0;
 
 // Holds all of the wrong guesses.
 var lossCounter = 0;
-    console.log(userChoice);
+    console.log(userGuess);
  
 // Holds user's guesses so far.
 var lettersGuessed = ""
@@ -24,67 +26,35 @@ var lettersGuessed = ""
 // Holds number of guesses remaining.
 var numGuesses = 10;
 
-// startGame()
-// It's how we we will start and restart the game.
-// (Note: It's not being run here. Function declarations like this are made for future use.)
+
+
+
+// Instructions:
+
+// 1. User is told to click a button to guess the correct letter
+
+
+// 2. Computer selects random letter
+
 function startGame() {
     numGuesses = 10
     chosenLetter = letters[Math.floor(Math.random() * letters.length)]
+};
 
  console.log(chosenLetter)
+
+// 3. User has 10 Guesses
+
+// 4. If user guesses correctly, wins increases by one
+
+ //   if userGuess
+
+// 5. If user guesses incorrectly, guesses reduces by one and letter that user guessed is added to Guesses So Far
+
+// 6. If user guesses incorrectly 10 times, losses increases by one
+
+// 7. Click clear button to reset game
+$("#clear").on("click", function() {
+    $("#display").empty();
+});
     
-     
-
-
- // 1. Create a for-loop to iterate through the letters array.
-
-     // Inside the loop...
-
-     // 2. Create a variable named "letterBtn" equal to $("<button>");
-
-     // 3. Then give each "letterBtn" the following classes: "letter-button" "letter" "letter-button-color".
-
-     // 4. Then give each "letterBtn" an attribute called "data-letter", with a value eqaual to "letters[i]"
-
-     // 5. Then give each "letterBtn" a text equal to "letters[i]".
-
-     // 6. Finally, append each "letterBtn" to the "#buttons" div 
-     for (var i = 0; i < letters.length; i++) {
-        var letterBtn = $("<button>");
-        letterBtn.addClass("letter-button letter letter-button-color");
-        letterBtn.attr("data-letter", letters[i]);
-        letterBtn.text(letters[i]);
-        $("#buttons").append(letterBtn);
-    }
-
-       // 7. Create an "on-click" event attached to the ".letter-button" class.
-
-     // Inside the on-click event...
-
-     // 8. Create a variable called "fridgeMagnet" and set the variable equal to a new div.
-
-     // 9. Give each "fridgeMagnet" the following classes: "letter fridge-color".
-
-     // 10. Then chain the following code onto the "fridgeMagnet" variable: .text($(this).attr("data-letter"))
-
-     // 11. Lastly append the fridgeMagnet variable to the "#display" div (provided);
-
-     // Be sure to test that your code works for this major task, before proceeding to the next one!
-
-
-    //$(".letter-button").on("click", function() {
-        //var fridgeMagnet = $("<div>");
-        //fridgeMagnet.addClass("letter fridge-color");
-        //fridgeMagnet.text($(this).attr("data-letter"));
-        //$("#display").append(fridgeMagnet);
-        //}
-
-    // 12. Create an "on-click" event attached to the "#clear" button id.
-
-     // Inside the on-click event...
-
-     // 13. Use the jQuery "empty()" method to clear the contents of the "#display" div.
-
-    $("#clear").on("click", function() {
-        $("#display").empty();
-    });
